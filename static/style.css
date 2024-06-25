@@ -129,7 +129,11 @@ a {
 
 #suggestion {
   font-family: Poppins;
+<<<<<<< HEAD
   font-size: 15px;
+=======
+  font-size: 10px;
+>>>>>>> 254de8502dfacaba8991222af1dd62fcb1cd4472
   padding-top: 10px;
 }
 
@@ -162,9 +166,12 @@ a {
   width: 50%;
   border-radius: 0px 20px 0px 0px;
   background-color: #373a3c;
+<<<<<<< HEAD
 }
 
 #loading {
   margin-left: 32%;
   margin-top: 10%;
+=======
+>>>>>>> 254de8502dfacaba8991222af1dd62fcb1cd4472
 }

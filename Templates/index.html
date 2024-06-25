@@ -1,63 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Product Suggestion System</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="static/style.css">
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-</style>
-<body>
-
-    <div id = "topnav">
-        <img src="static\logo.webp" id="logo">
+  <meta charset="UTF-8" />
+  <title>Product Suggestion System</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+  </style>
+  <body>
+    <div id="topnav">
+      <a href="{{url_for('index')}}">Products</a>
+      <img alt src="/static/logo.webp" id="logo" />
+      <a href="{{url_for('Analytics')}}">Analytics</a>
     </div>
-    <div style="display: flex;">
-        <section id="analysisSpan">
-            <p>Analytics</p>
-            <div id="idkyet">
-
-            </div>
-        </section>
-        <section id="productSpan">
-            <p>Products</p>
-            <div id="productList">
-
-            </div>
-        </section>
-        <section id="suggestions">
-            <p>Products</p>
-            <div id="productList">
-                
-            </div>
-        </section>
+    <div id="main">
+      <section id="suggestionSpan">
+        <p>Suggestions</p>
+        <div id="suggestionList"></div>
+        <button type="button" onclick="ask()" id="generateButton">
+          Generate
+        </button>
+      </section>
+      <section id="productSpan">
+        <p>Products</p>
+        <div id="productList"></div>
+      </section>
     </div>
-    <div id="container">
-        <div id="sec1">
-        </div>
-        <div id="sec3">
-            <a id="refreshbutton" href="/">Refresh</a>
-        </div>
-        <div id="sec2">
-            <div id="suggestions_container">
-                <h2>Product suggestions</h2>
-                <div id="suggestions">
+    <script src="/static/script.js"></script>
 
-                </div>
-            </div>
-            <div id="product_line_container">
-                <h2>Product line</h2>
-                <div id="product_line">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <script src="static\script.js"></script>
     <script>
-        data = pass({{data|tojson}})
-        product_line = add_items({{product_line|tojson}})
+        function ask() {
+            fetch('/ask')
+                .then(result => result.json())
+                .then(data => {
+                    pass(data.result);
+                });
+        }
+      product_line = add_items({{product_line|tojson}})
     </script>
-</body>
+  </body>
 </html>

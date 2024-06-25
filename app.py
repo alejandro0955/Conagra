@@ -11,7 +11,6 @@ import webbrowser
 def ask(input):
     client = anthropic.Anthropic(
         api_key="",
-        api_key="",
     )
     message = client.messages.create(
         model="claude-3-haiku-20240307",
@@ -35,18 +34,11 @@ file = pd.read_excel('test.xlsx', engine='openpyxl')
 file = file.to_dict(orient="index")
     
     
-file = pd.read_excel('test.xlsx', engine='openpyxl')
-file = file.to_dict(orient="index")
     
     
 
 
 suggestions = {
-'suggestion1': '',
-'suggestion2': '',
-'suggestion3': '',
-'suggestion4': '',
-'suggestion5': ''
 'suggestion1': '',
 'suggestion2': '',
 'suggestion3': '',
@@ -60,7 +52,6 @@ suggestions = {
 
 
 product_line = ["beef jerky", "hot pockets", "Beef power bowls", "simply steamers", "cookie mix", "cake mix", "Ultimate Plant-Based Chick’n Tenders", "turky roast", "wings", "sugared donuts bites", "Berry Smoothie Bowl", "Marie Callender's frozen meals", "Slim Jim meat snacks", "Hunt's canned tomatoes and sauces", "Chef Boyardee canned pastas and meals", "Orville Redenbacher's popcorn products", "Duncan Hines baking mixes and frostings", "Healthy Choice frozen meals and soups", "Banquet frozen meals and desserts", "Hebrew National hot dogs", "Birds Eye frozen vegetables", "Van Camp's canned beans", "Reddi-wip whipped topping", "Frontera frozen meals and sauces", "Gardein plant-based meat alternatives (acquired by Conagra)", "Angie's Boomchickapop popcor", "Earth Balance plant-based butter and spreads", "Udi's Gluten Free bread and baked goods (acquired by Conagra)", "Blake's All Natural Foods frozen meals (acquired by Conagra)", "Duke's and Bigs meat snacks", "Frontera salsas and sauces", "Peter Pan peanut butter", "Snack Pack pudding cups", "Rosarita canned beans and Mexican food products", "La Choy Asian-style canned foods", "Swiss Miss hot cocoa mixes", "Vlasic pickles", "Bertolli frozen meals and pasta sauces (licensed brand)", "Angie's kettle corn", "Slim Jim jerky"]
-# str(product_line[random.randrange(0,len(product_line))])
 # str(product_line[random.randrange(0,len(product_line))])
 # time.sleep(60)
 

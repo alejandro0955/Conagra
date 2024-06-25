@@ -30,7 +30,6 @@
 
     <script>
         function ask() {
-<<<<<<< HEAD
             function deleteElementsInsideDiv() {
                 const div = document.getElementById('suggestionList');
                 while (div.firstChild) {
@@ -42,16 +41,11 @@
             loading.id = "loading";
             loading.src = "/static/loading.gif";
             document.getElementById("suggestionList").appendChild(loading);
-=======
->>>>>>> 254de8502dfacaba8991222af1dd62fcb1cd4472
             fetch('/ask')
                 .then(result => result.json())
                 .then(data => {
                     pass(data.result);
-<<<<<<< HEAD
                     document.getElementById("loading").remove();
-=======
->>>>>>> 254de8502dfacaba8991222af1dd62fcb1cd4472
                 });
         }
       product_line = add_items({{product_line|tojson}})
